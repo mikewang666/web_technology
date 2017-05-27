@@ -1,0 +1,49 @@
+<div class="row pre-scrollable">
+    <div class="col-md-8 col-md-offset-2">
+        <carousel interval="myInterval">
+            <slide ng-repeat="slide in slides" active="slide.active">
+                <a href="{{slide.link}}">
+                  <img ng-src="{{slide.image}}" style="margin:auto;">
+              </a>
+            </slide>
+        </carousel>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+        <!-- FOURTH EXAMPLE -->
+        <div class="view view-fourth">
+            <img src="img/bbcnews.jpg" />
+            <div class="mask">
+                <h2>BBC news</h2>
+                <p>The Queen has condemned the "wicked" Manchester attack as she met children injured by the suicide bombing.</p>
+                <a href="http://www.bbc.co.uk/news/uk-40051154" class="info">Read More</a>
+            </div>
+        </div>
+        <div class="view view-fourth">
+            <img src="img/cnnnews.jpg" />
+            <div class="mask">
+                <h2>CNN news</h2>
+                <p>US-UK intel sharing back on after Trump vows to plug leaks.</p>
+                <a href="http://edition.cnn.com/2017/05/25/politics/nato-trump-intel-sharing/index.html" class="info">Read More</a>
+            </div>
+        </div>
+        <div class="view view-fourth">
+            <img src="img/sunnews.jpg" />
+            <div class="mask">
+                <h2>SUN news</h2>
+                <p>I FEEL I AM NOBODY, Jose Mourinho says Europa League win does not stop inadequate feelings.</p>
+                <a href="https://www.thesun.co.uk/sport/football/3653232/jose-mourinho-europa-league-manchester-united-sir-alex-ferguson-sir-matt-busby/"
+                    class="info">Read More</a>
+            </div>
+        </div>
+        <div class="view view-fourth">
+            <img src="img/timesnews.jpg" />
+            <div class="mask">
+                <h2>The Times</h2>
+                <p>President Obama Tells Crowd of Thousands in Berlin: 'We Can't Hide Behind a Wall'</p>
+                <a href="http://time.com/4794605/barack-obama-berlin-wall-angela-merkel-donald-trump/" class="info">Read More</a>
+            </div>
+        </div>
+    </div>
+
+</div>

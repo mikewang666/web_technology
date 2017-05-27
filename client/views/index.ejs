@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--Fixes routing errors when refreshing some routes ie. projects/customerapi.html-->
+     <base href="/" />
+
+    <title>News Discussion Website</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="libs/bootstrap/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.3.0/animate.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/custom.css" type="text/css" />
+	<link rel="stylesheet" href="css/homenew.css" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default" ng-controller="navController">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">News Discussion</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li ng-class="{active: isActive('/home')}"><a href="/home">Home</a></li>
+              <li ng-class="{active: isActive('/about')}"><a href="/about">About Me</a></li>
+              <li ng-class="{active: isActive('/projects')}"><a href="/projects">Discussion room</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="container-fluid">
+        <div ng-view></div>
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!--Socket IO-->
+    <script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
+
+    <!--JQuery and Bootstrap-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.js"></script>
+
+    <!--Angular and Dependancies-->
+    <script type="text/javascript" src="libs/angular/angular.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-animate.js"></script>
+    <script type="text/javascript" src="libs/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="libs/angular-resource/angular-resource.js"></script>
+    <script type="text/javascript" src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script type="text/javascript" src="libs/angular-socket-io/socket.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <!--Main Controllers-->
+    <script type="text/javascript" src="js/controllers/homeController.js"></script>
+    <script type="text/javascript" src="js/controllers/navController.js"></script>
+    <script type="text/javascript" src="js/controllers/aboutController.js"></script>
+    <script type="text/javascript" src="js/controllers/projectsController.js"></script>
+
+    <!--Project Controllers-->
+    <script type="text/javascript" src="js/controllers/projects/customerApiController.js"></script>
+    <script type="text/javascript" src="js/controllers/projects/chatController.js"></script>
+
+    <!--Services-->
+    <script type="text/javascript" src="js/services/Api.js"></script>
+    <script type="text/javascript" src="js/services/SocketFactory.js"></script>
+
+    <!--Tools-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+
+  </body>
+</html>

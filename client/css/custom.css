@@ -1,0 +1,65 @@
+#about-image {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+}
+#about h2 {
+    border-bottom: 2px solid black;
+}
+p {
+    text-indent: 40px;
+}
+
+tr.ng-enter{
+    animation: fadeIn 1s;
+}
+
+/*tr.ng-leave{*/
+/*    animation: slideOutLeft 1s;*/
+/*}*/
+
+#customer-table{
+    height: 400px;
+}
+
+.user-window{
+    border-left: 2px solid black;
+    height: 300px;
+}
+.username{
+    color: red;
+    font-weight: bold;
+}
+
+.chat-window{
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+body{
+    overflow:hidden;
+    margin: 0px 0px;
+    font-family: Arial;
+    font-size:13px;
+    background-repeat:no-repeat;
+}
+#myContent, #myContent blink{
+    padding: 10px 0px;
+    background:black;
+    color: #00FF00;
+    border-radius:20px;
+    margin: 5px 5px;
+    width:1100px;
+    height:300px;
+    font-family:courier;
+    overflow:auto;
+}
+blink{
+    display:inline;
+}

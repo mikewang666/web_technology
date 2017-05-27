@@ -1,0 +1,108 @@
+<!--
+about me
+-->
+<div class="pre-scrollable">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<title>about us</title>
+
+    <script type="text/javascript">
+    var charIndex = -1;
+    var stringLength = 0;
+    var inputText;
+    function writeContent(init){
+    if(init){
+        inputText = document.getElementById('contentToWrite').innerHTML;
+    }
+        if(charIndex==-1){
+            charIndex = 0;
+            stringLength = inputText.length;
+        }
+        var initString = document.getElementById('myContent').innerHTML;
+        initString = initString.replace(/<SPAN.*$/gi,"");
+
+        var theChar = inputText.charAt(charIndex);
+           var nextFourChars = inputText.substr(charIndex,4);
+           if(nextFourChars=='<BR>' || nextFourChars=='<br>'){
+               theChar  = '<BR>';
+               charIndex+=3;
+           }
+        charIndex = charIndex/1 +1;
+        $("#blink").remove();
+        $("#myContent").append(theChar+"<SPAN id='blink'>|</SPAN>");
+        $("#myContent").scrollTop($("#myContent")[0].scrollHeight);
+if(charIndex%2==1){
+             $('#blink').html("&nbsp;");
+        }else{
+             $('#blink').html('|');
+        }
+
+        if(charIndex<=stringLength){
+            setTimeout('writeContent(false)',50);
+        }else{
+            blinkSpan();
+        }
+    }
+    function blinkSpan(){
+        if($('#blink').html()=="&nbsp;"){
+        	$('#blink').html("|");
+        }else{
+        	$('#blink').html("&nbsp;");
+        }
+        setTimeout('blinkSpan()',500);
+    }
+    </script>
+</head>
+
+
+<div id="myContent">
+<SPAN id='blink'>|</SPAN>
+</div>
+<div id="contentToWrite" style="display:none">
+Project:   The news <br>
+Student: BAODONG WANG  bw16221<br>
+Student: YUEFENG LI    yl16253<br>
+We create this website for you to overview the news and discuss it with others. You can sign up by clicking the 'sign up'in Discussion room and sign in by clicking the Chatroom or the dialog box to discuss with others. <br>
+Date:     25th,May,2017<br>
+</div>
+<script type="text/javascript">
+writeContent(true);
+</script>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-6">
+        <img src="img/bao.png" class="img-circle img-reponsive" id="about-image"></img>
+    </div>
+    <div class="col-md-6">
+		<img src="img/feng.png" class="img-circle img-reponsive" id="about-image"></img>
+    </div>
+
+
+</div>
+
+<br>
+    <br>
+<div class="row">
+
+    <div class="col-md-2 col-md-offset-3">
+        <a href="https://twitter.com" class="btn btn-info btn-block">
+            <i class="fa fa-twitter fa-5x"></i>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="https://www.facebook.com" class="btn btn-primary btn-block">
+            <i class="fa fa-facebook fa-5x"></i>
+        </a>
+    </div>
+    <div class="col-md-2">
+        <a href="https://www.youtube.com" class="btn btn-danger btn-block">
+            <i class="fa fa-youtube fa-5x"></i>
+        </a>
+    </div>
+</div>
+</div>
